@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>jsp2_yorizori</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<!-- jsp에서 발생하는 예외 처리 페이지 설정 -->
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/WEB-INF/views/error/error_500.jsp</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>ezen.yorizori.web.common.YZRuntimeException</exception-type>
+		<location>/WEB-INF/views/error/error_biz.jsp</location>
+	</error-page>
+	
+	<!-- 오류코드별 오류 처리 페이지 설정 -->
+	<error-page>
+		<error-code>400</error-code>
+		<location>/WEB-INF/views/error/error_400.jsp</location>
+	</error-page>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/views/error/error_404.jsp</location>
+	</error-page>
+
+</web-app>
